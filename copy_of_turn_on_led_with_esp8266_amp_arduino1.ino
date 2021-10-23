@@ -39,7 +39,7 @@ void loop()
      String command1 = msg.substring(0);
      // HTML START
      String webpage = "<html><head><title>ESP8266 WEB SWITCH</title>";
-     webpage += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><style>.button {background-color: orange;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block;font-size: 16px;} .centre {text-align: center;}</style>";
+     webpage += "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><style>.button {background-color: red;border: none;color: white;padding: 15px 32px;text-align: center;display: inline-block;font-size: 16px;} .centre {text-align: center;}</style>";
      webpage += "</head><body class=\"centre\"><h1 class=\"centre\">ESP8266 WEB SWITCH</h1>";
      //COMMANDS TO TURN ON or OFF LED RECEIVE BY WEB
                   if (command1 == "T"){
@@ -47,16 +47,16 @@ void loop()
                     {
                       digitalWrite(LED, LOW);
                       itsONled[1] = 0; 
-                      webpage += "<p>LED STATUS OFF</p>";
+                      webpage += "<p>LED IS OFF</p>";
                     }
                     else
                     {
                       digitalWrite(LED, HIGH);
                       itsONled[1] = 1;
-                      webpage += "<p>LED STATUS ON</p>";
+                      webpage += "<p>LED IS ON</p>";
                     }
                 }
-     webpage += "<a class=\"button\" href=\"?T\">TAP</a></body></html>";
+     webpage += "<a class=\"button\" href=\"?T\">CLICK</a></body></html>";
      String cipSend = "AT+CIPSEND=";
      cipSend += connectionId;
      cipSend += ",";
